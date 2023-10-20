@@ -1,0 +1,17 @@
+%{
+#include<ctype.h>
+%}
+
+%%
+
+[a-z] { printf("%d", toupper(yytext[0]));}
+.|\n { printf("%d", yytext[0]);}
+
+%%
+
+int yywrap(){}
+
+int main() {
+    printf("enter the string: ");
+    yylex();
+}
